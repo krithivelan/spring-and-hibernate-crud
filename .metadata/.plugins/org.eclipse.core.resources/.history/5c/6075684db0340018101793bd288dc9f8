@@ -1,0 +1,36 @@
+package com.niit.backend.daoImpl;
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import com.niit.backend.dao.UserDAO;
+import com.niit.backend.model.UserModel;
+
+@Repository
+public class UserDAOImpl implements UserDAO{
+	
+	@Autowired
+	SessionFactory sessionFactory;
+	public boolean insertUser(UserModel userModel) {
+			
+		try 
+		{
+			Session session = sessionFactory.openSession();
+			Transaction transaction = session.beginTransaction();
+			session.save(userModel);
+			transaction.commit();
+			session.close();
+			
+		} 
+		catch (Exception e) 
+		{
+			System.out.println("\n ERROR IN USER REGISTRATION \n ERROR OBTAINED: "+e);
+			return false;
+		}
+		
+	}	
+	
+}

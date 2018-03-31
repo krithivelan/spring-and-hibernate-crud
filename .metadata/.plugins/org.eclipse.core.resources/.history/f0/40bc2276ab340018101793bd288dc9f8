@@ -1,0 +1,9 @@
+package com.niit.backend.dao;
+
+import com.niit.backend.model.UserModel;
+
+public interface UserDAO {
+	
+	public String insertUser(UserModel userModel);
+
+}

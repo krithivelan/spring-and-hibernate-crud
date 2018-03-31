@@ -1,0 +1,21 @@
+package com.niit.backend.daoImpl;
+
+import com.niit.backend.dao.UserDAO;
+import com.niit.backend.model.UserModel;
+
+public class UserDAOImpl implements UserDAO{
+
+	public String insertUser(UserModel userModel) {
+		return null;
+		
+		try 
+		{
+								
+		} 
+		catch (Exception e) 
+		{
+			
+		}
+	}	
+	
+}

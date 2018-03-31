@@ -1,0 +1,38 @@
+package com.niit.frontend;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+import com.niit.backend.dao.UserDAO;
+import com.niit.backend.model.UserModel;
+
+@Controller
+public class UserController 
+{
+	@Autowired
+	UserDAO userDAO;
+	
+	@RequestMapping("/register")
+	public ModelAndView signup()
+	{
+		ModelAndView modelAndView = new ModelAndView("register");
+		modelAndView.addObject( "regModelAgent",new UserModel() );
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping("/signup")
+	public String register(@ModelAttribute("regModelAgent") UserModel userModel)
+	{
+		if(userDAO.insertUser(userModel))
+		{
+			return "contactus";
+		}
+		else
+		{
+			return "redirect:/register";
+		}		
+	}
+}

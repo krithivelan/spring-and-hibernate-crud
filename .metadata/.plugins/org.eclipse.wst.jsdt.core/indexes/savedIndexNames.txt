@@ -1,0 +1,9 @@
+INDEX VERSION 1.3+C:\Users\LENOVO\WEB-JAVA-OXYGEN\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3680266041.index
+1831525664.index
+227121725.index
+1999343691.index
+3397119495.index
+2739209913.index
+1598263369.index
+2769987171.index

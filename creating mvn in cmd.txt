@@ -1,0 +1,1 @@
+mvn archetype:generate -DgroupId=com.niit -DartifactId=backend -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
