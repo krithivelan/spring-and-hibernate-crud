@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +29,14 @@
   border-bottom:MediumSeaGreen solid 3px;
   padding-bottom:3vh;
   margin-bottom:4vh;
+  }
+  table tbody tr td{
+  border:2px;
+  border-width: 2px;
+  border-color: red;
+  border-style: double;
+  padding-left:10px;
+  text-align:center;
   }
   
   </style>
@@ -103,8 +112,32 @@
   </div>
   
 </form:form>
+<br><br>
+
+<table >
+	<tbody>
+		<tr>
+			<td>UserName</td>
+			<td>UserEmail</td>
+			<td>UserCity</td>
+			<td>Delete</td>
+			<td>Edit</td>
+		</tr>	
+		<c:forEach var="usr" items="${allUsers}">
+		<tr>
+			<td>${usr.getUserName()}</td>
+			<td>${usr.getUserEmail()}</td>
+			<td>${usr.getUserCity()}</td>
+			<td><button class="btn btn-danger">DELETE</button></td>
+			<td><button class="btn btn-primary">EDIT</button></td>
+		</tr>
+		</c:forEach>
+	</tbody>
+</table>
 
 </div>
+
+
 
 </body>
 </html>

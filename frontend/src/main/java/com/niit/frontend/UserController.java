@@ -19,6 +19,7 @@ public class UserController
 	{
 		ModelAndView modelAndView = new ModelAndView("register");
 		modelAndView.addObject( "regModelAgent",new UserModel() );
+		modelAndView.addObject("allUsers" , userDAO.listOfUsers());
 		
 		return modelAndView;
 	}
@@ -28,7 +29,7 @@ public class UserController
 	{
 		if(userDAO.insertUser(userModel))
 		{
-			return "contactus";
+			return "redirect:/register";
 		}
 		else
 		{
